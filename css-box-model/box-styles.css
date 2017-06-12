@@ -1,0 +1,52 @@
+body {
+  text-align: center; /* only affect content , not blocks*/
+}
+
+h1, p {
+  background-color: #DDE0E3;    /* Light gray */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+em, strong {
+  background-color: #B2D6FF;    /* Light blue */
+}
+
+h1 {
+  padding: 10px 15px 20px 25px;
+  border-top: 5px solid #5D6063;
+  border-right: 1px double #5DDD00;
+  border-bottom: 3px dashed #5DFFFF;
+  border-left: 7px dotted #5DAAAA;
+}
+
+p {
+  margin-top: 25px;
+  margin-bottom: 50px;   
+}
+
+strong {
+  /*display: block;*/
+  margin: 50px;  /*Inline boxes completely ignore the top and bottom margins of an element, unless changing the box type to block*/
+  /*padding: 50px; */
+}
+
+div {
+  color: #FFF;
+  background-color: #5995DA;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #5D6063;
+  border-radius: 5px;
+
+  width: 200px;
+  /*box-sizing: border-box;*/
+  /* Vertical  Horizontal */
+  /* only works on blocks that have an explicit width defined */
+  margin: 20px auto; /*set the left and right margin of a block-level element to auto, it will center the block in its parent element*/
+}
