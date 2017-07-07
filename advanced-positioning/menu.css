@@ -82,3 +82,10 @@ a:hover {
 .features-menu {                   
   display: none;
 }
+
+.map {
+  display: flex;
+  height: 1000px;
+  width: 100px;
+  color: #123456;
+}
