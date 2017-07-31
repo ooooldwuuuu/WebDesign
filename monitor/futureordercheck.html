@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WTS APGW V1.00 Administration</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="menu-container">
+      <div class="menu">
+        <div class="logo"><a href="info.html"><img src="images/concords-logo.png"/></a></div>
+        <div class="text-title">
+          <p>WTS APGW V1.00 Administration</p>
+        </div>
+      </div>
+      <ul class="navigator">
+        <li class="nav-item"><a href="info.html">基本資料</a></li>
+        <li class="nav-item"><a href="securitycheck.html">證券監測</a></li>
+        <li class="nav-item"><a href="securityordercheck.html">證券委託</a></li>
+        <li class="nav-item"><a href="securityexecheck.html">證券成交</a></li>
+        <li class="nav-item"><a href='#'>快速刪單</a></li>
+        <li class="nav-item"><a href="futurecheck.html">期貨監測</a></li>
+        <li class="nav-item"><a href="futureordercheck.html">期貨委託</a></li>
+        <li class="nav-item"><a href="futureexecheck.html">期貨成交</a></li>
+        <li class="nav-item"><a href='#'>原始記錄</a></li>
+        <li class="nav-item"><a href='#'>下單/查詢</a></li>
+        <li class="nav-item"><a href='#'>報表</a></li>
+        <li class="nav-item"><a href='#'>連線狀態</a></li>
+        <li class="nav-item"><a href='#'>系統狀態</a></li>
+        <li class="nav-item"><a href='#'>停用下單</a></li>
+        <li class="nav-item"><a href='#'>修改密碼</a></li>
+        <li class="nav-item"><a href='#'>權限管理</a></li>
+        <li class="nav-item"><a href='#'>APGW設定</a></li>
+        <li class="nav-item"><a href="login.html">登出</a></li>
+      </ul>
+    </div>
+    <div class="page">
+      <div class="page-usersetting">
+        <div class="page-usersetting-header">
+          <h5>期貨委託查詢</h5>
+          <div class="page-usersetting-other">
+            <input id='orderinfo'
+                   name='orderinfo'
+                   type='checkbox'
+                   value='orderinfo'/>
+            <label for="orderinfo">明細</label>
+          </div>
+        </div>
+        <form class="page-usersetting-condition" action="" method="post">
+          <div class="condition-item">
+            <label for='user-name'>交易日期:</label>
+            <input id='user-name' name='user-name' placeholder="YYYYMMDD" type='text'/>
+          </div>
+          <div class="condition-item">
+            <label for='first-sign'>分公司:</label>
+            <select id='first-sign' name='first-sign'>
+              <option selected disabled hidden></option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+            </select>
+          </div>
+          <div class="condition-item">
+            <label for='user-name'>帳號:</label>
+            <input id='user-name' name='user-name' type='text'/>
+          </div>
+          <div class="condition-item">
+            <label for='first-sign'>類別:</label>
+            <select id='first-sign' name='first-sign'>
+              <option selected disabled hidden></option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+            </select>
+          </div>
+          <div class="condition-item">
+            <button type="submit">送出查詢</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
