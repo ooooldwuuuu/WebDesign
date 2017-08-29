@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Marko Demo</title>
+    </head>
+    <body>
+        <h1>Marko Demo</h1>
+        <h2>${data.name}</h2>
+        <ul if(data.colors.length)>
+            <li for(color in data.colors)>
+                ${color}
+            </li>
+        </ul>    
+        <div else>
+            No colors
+        </div>
+
+        <app_hello name="Roal" message-count="30"/>
+        <app_hello message-count="1"/>
+    </body>
+</html>
