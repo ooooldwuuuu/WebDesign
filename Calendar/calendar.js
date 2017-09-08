@@ -1,4 +1,5 @@
 let inputYear;
+let hdObjArr = [];
 
 function Calendarize() {
 	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -54,7 +55,15 @@ function Calendarize() {
 				showYear: true,
 				clickHandler: function(e) {
 					var day = e.target.getAttribute("data-date");
-					alert(day);
+					// alert(day);
+					if(!e.target.classList.contains("setHD")){
+						e.target.classList.add("setHD");
+						e.target.style.backgroundColor = "pink";
+					}
+					else{
+						e.target.classList.remove("setHD");
+						e.target.style.backgroundColor = "#a5d2ff";
+					}
 				}
 			};
 
@@ -153,7 +162,10 @@ function Calendarize() {
 				if (dateParsed > todayParsed) $dayNode.classList.add('future');
 				if (dateParsed <todayParsed) $dayNode.classList.add('past');
 
-				if (dow === 0 || dow === 6) $dayNode.classList.add('weekend');
+				if (dow === 0 || dow === 6) {
+					$dayNode.classList.add("setHD");
+					$dayNode.classList.add('weekend');
+				}
 				if (opts.onlyCurrent && c < today) $dayNode.classList.add('dummy-day');
 				if (opts.limitDate) {
 					if (c > opts.limitDate) {
@@ -220,8 +232,29 @@ function produceCalendar(){
 	calendarize.buildYearCalendar($calendar, inputYear);
 }
 
-function clearCalendar()
-{
+function clearCalendar(){
 	document.getElementById("calendar").innerHTML = "";
 	document.getElementById("inputYear").value = "";
+}
+
+function submitHoliday(){
+	let monthList = document.getElementsByClassName("month");
+	let monthHolidayList;
+	for(i = 0; i < 12; i++){
+		monthHolidayList = monthList[i].getElementsByClassName("setHD");
+		if(monthHolidayList.length == 0)
+			continue;
+		let hdArr = [];
+		for(j = 0; j < monthHolidayList.length; j++){
+			//console.log(monthHolidayList[j].getAttribute("data-date"));
+			let hdStr = monthHolidayList[j].getAttribute("data-date");
+			let hdInfoArr = hdStr.split(" ");
+			hdArr.push(hdInfoArr[2]);
+		}
+		hdObjArr.push([i+1, hdArr]);
+	}
+	let jsonHDData = JSON.stringify(hdObjArr);
+	console.log(jsonHDData);
+
+	hdObjArr = [];
 }
